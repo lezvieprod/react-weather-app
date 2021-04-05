@@ -1,7 +1,8 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
-
 
 .app-layout {
   background: linear-gradient(14deg, #2bb5d2, #d4a2ee);
@@ -15,14 +16,37 @@
 .app-body {
   background-color: #fff;
   border-radius: 4px;
-  box-shadow: 0 0 14px 15px rgba(0,0, 0, 0.1);
+  box-shadow: 0 0 14px 15px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   max-width: 400px;
+  width: 100%;
 }
+.app-body input {
+  width: 100%;
+  padding: 4px 10px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #d1d1d1;
+  outline: none;
+}
+.app-body button {
+  width: 100%;
+  height: 40px;
+  margin: 0.4rem 0;
+  border: 0;
+  background-color: royalblue;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
 .app-output-info {
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+.weather-output {
   margin: 2rem 0;
 }
 .weather-output__city {

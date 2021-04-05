@@ -26,11 +26,12 @@ function App() {
   return (
     <div className="app-layout">
       <div className="app-body">
+        <p>Введите город или страну</p>
         <input
           value={city}
           onChange={e => setCity(e.target.value)}
         />
-        <button onClick={getWeather}>get weather</button>
+        <button onClick={getWeather}>Узнать погоду</button>
         <div className="app-output-info">
           {(typeof weatherInfo.weather !== "undefined") &&
             <div className="weather-output">
@@ -41,18 +42,12 @@ function App() {
                 {weatherInfo.weather.map(i => i.description)}
               </div>
               <div>
-                {'Температура сейчас: ' + Math.round(weatherInfo.main.temp)}
-              </div>
-              <div>
-                {'Максимальная температура: ' + Math.round(weatherInfo.main.temp_max)}
-              </div>
-              <div>
-                {'Минимальная температура: ' + Math.round(weatherInfo.main.temp_min)}
+              Температура сейчас: <strong>{ Math.round(weatherInfo.main.temp)}</strong>
               </div>
             </div>
           }
           {weatherInfo.message &&
-            <div style={{ flexWrap: 'wrap' }}>
+            <div className="weather-output">
               <div>
                 {'Error code: ' + weatherInfo.cod}
               </div>
